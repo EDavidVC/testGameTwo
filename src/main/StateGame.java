@@ -8,6 +8,7 @@ import java.util.ArrayList;
 public class StateGame {
     private ArrayList<gameObjects> bullets;
     private Player player;
+    //Este mensaje biene desde un lugar
     public StateGame(){
         bullets = new ArrayList<gameObjects>();
         player = new Player(new Position(20,20), new Dimension(20, 40), Color.BLUE);
