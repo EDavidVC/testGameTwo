@@ -8,7 +8,8 @@ public class Player extends gameObjects{
     private int direction = 0;
     
     public boolean isShooting = false;
-
+    //Ola
+    //asdasd
     public Player(Position position, Dimension size, Color color) {
         super(position, size, color);
     }
