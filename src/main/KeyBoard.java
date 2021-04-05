@@ -2,7 +2,6 @@ package main;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import javafx.scene.input.KeyCode;
 
 public class KeyBoard implements KeyListener {
     private boolean[] keys = new boolean[256];

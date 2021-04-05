@@ -19,7 +19,9 @@ public class Player extends gameObjects{
             direction = -4;
         }
         if(KeyBoard.DOWN){
-            direction = +4; 
+            direction = +4;
+        }
+        position.setY(position.getY()+direction);
     } 
     
     //How Much Shot 2 second
