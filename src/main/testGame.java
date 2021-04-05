@@ -3,11 +3,8 @@ package main;
 import java.awt.BorderLayout;
 import java.awt.Canvas;
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JFrame;
 
 public class testGame implements Runnable{
@@ -71,7 +68,7 @@ public class testGame implements Runnable{
         
         g = bs.getDrawGraphics();
         g.clearRect(0, 0, 500, 500);
-        g.setColor(Color.GRAY);
+        g.setColor(Color.decode("#23021B"));
         g.fillRect(0, 0, 500, 500);
         
         //.---.-.
@@ -91,7 +88,7 @@ public class testGame implements Runnable{
     @Override
     public void run() {
         final int nanoReference = 1000000000;
-        final int FPS = 60;
+        final int FPS = 40;
         final double NANO_FPS = nanoReference / FPS;
         
         long nanoTime = System.nanoTime();

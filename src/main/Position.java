@@ -1,7 +1,7 @@
 package main;
 
 import java.awt.Dimension;
-
+import java.util.Random;
 public class Position {
     private int x;
     private int y;
@@ -19,8 +19,18 @@ public class Position {
     public int getY(){
         return this.y;
     }
+    public Position generateAleatory() {
+    	int y = (int) generateNumber(500, 0);
+    	int x = 550;
+    	Position tempPosition = new Position(x,y);
+    	return tempPosition;
+    }
     public void setX(int newX){this.x = newX;}
     public void setY(int newY){this.y = newY;}
     
+    private double generateNumber(double max, double min) {
+    	double tempNumber = (Math.random() * (max-min)+1)+min;
+    	return tempNumber;
+    }
     public Dimension getMidRigth(){return new Dimension(200,200);}
 }

@@ -6,28 +6,26 @@ import java.awt.Graphics;
 
 public class Player extends gameObjects{
     private int direction = 0;
-    
+    private int points;
     public boolean isShooting = false;
-    //Ola
-    //asdasd
     public Player(Position position, Dimension size, Color color) {
         super(position, size, color);
+        points = 0;
     }
         
     private void move(){
         if(KeyBoard.UP){
-            direction = -4;
+            direction = -3;
         }
         if(KeyBoard.DOWN){
-            direction = +4;
+            direction = +3;
         }
         position.setY(position.getY()+direction);
     } 
-    
     //How Much Shot 2 second
     
     private long lastTimeShot = System.nanoTime();
-    private double cantShotForSecond = 1000000000/10;
+    private double cantShotForSecond = 1000000000/2;
     
     double shotTime;
     double isNowShot = 0;
@@ -44,6 +42,10 @@ public class Player extends gameObjects{
       }      
     }
     
+    public void addPoints(int cantPoint) {
+    	this.points = this.points + cantPoint;
+    }
+    
     
     @Override
     public void update() {
@@ -55,6 +57,8 @@ public class Player extends gameObjects{
     public void draw(Graphics g) {
         g.setColor(color);
         g.fillRect(this.position.getX(), this.position.getY(), (int)size.getWidth(), (int)size.getHeight());
+        g.setColor(Color.WHITE);
+        g.drawString("TOTAL POINT: "+points , 20, 20);
     }
     
 }
