@@ -13,19 +13,23 @@ public class Player extends gameObjects{
         points = 0;
     }
         
+    private int velocity = 8;
     private void move(){
-        if(KeyBoard.UP){
-            direction = -3;
+        if(KeyBoard.UP && getRelativePosition().getY() > 0){
+            direction += velocity*-1;
         }
-        if(KeyBoard.DOWN){
-            direction = +3;
+        
+        if(KeyBoard.DOWN && getRelativePosition().getY() < config.getSizeCanvas().height){
+            direction += velocity;
         }
+        
         position.setY(position.getY()+direction);
+        direction = 0;
     } 
     //How Much Shot 2 second
     
     private long lastTimeShot = System.nanoTime();
-    private double cantShotForSecond = 1000000000/2;
+    private double cantShotForSecond = 1000000000/3;
     
     double shotTime;
     double isNowShot = 0;

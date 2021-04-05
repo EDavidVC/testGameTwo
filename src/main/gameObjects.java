@@ -37,12 +37,12 @@ public abstract class gameObjects {
     	
     	return false;
     }
-    private Position getRelativePosition() {
+    public Position getRelativePosition() {
     	int x = this.position.getX() + ((int)size.getWidth()/2);
     	int y = this.position.getY() + ((int)size.getHeight()/2);
     	return new Position(x,y);
     }
-    private Dimension getRadiusSize() {
+    public Dimension getRadiusSize() {
     	int x =(int) this.size.getWidth()/2;
     	int y =(int) this.size.getHeight()/2;
     	return new Dimension(x,y);

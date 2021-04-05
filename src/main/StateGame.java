@@ -20,7 +20,7 @@ public class StateGame {
     }
     
     private long lastTimeShot = System.nanoTime();
-    private double cantShotForSecond = 1000000000/1;
+    private double cantShotForSecond = 1000000000/0.9;
     
     private double shotTime;
     private double isNowShot = 0;
@@ -32,11 +32,12 @@ public class StateGame {
         isNowShot += shotTime/cantShotForSecond;
         if(isNowShot>=1){
         	isNowShot=0;
-        	enemies.add(new enemy(new Position().generateAleatory(), new Dimension(50,50), Color.yellow));
+        	enemies.add(new enemy(new Position().generateEnemyAleatoriPosition(), new Dimension(50,50), Color.yellow));
         }
     }
     public void update(){
         player.update();
+
         if(player.isShooting){
             bullets.add(new Bullet(
                     new Position(player.getMidLeft().getX(),

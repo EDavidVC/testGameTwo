@@ -19,8 +19,8 @@ public class Position {
     public int getY(){
         return this.y;
     }
-    public Position generateAleatory() {
-    	int y = (int) generateNumber(500, 0);
+    public Position generateEnemyAleatoriPosition() {
+    	int y = (int) generateNumber(450, 0);
     	int x = 550;
     	Position tempPosition = new Position(x,y);
     	return tempPosition;

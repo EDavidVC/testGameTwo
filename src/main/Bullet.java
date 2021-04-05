@@ -12,7 +12,7 @@ public class Bullet extends gameObjects {
     
     @Override
     public void update() {
-        this.position.setX(this.position.getX() + 20);
+        this.position.setX(this.position.getX() + 15);
     }
 
     @Override
